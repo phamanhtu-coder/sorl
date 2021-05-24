@@ -20,7 +20,7 @@ public interface VtvTravelSearchRepository extends Repository<VtvTravelSearch, S
     @Query(value = "content_name:?0 AND region_name:?1 AND name:?2*")
     List<VtvTravelSearch> findByContentNameAndRegionNameAndName1(String contentName, String regionName, String name);
 
-    @Query(value = "content_name:?0 AND region_name:?1 AND name:?2* sorst=view_count desc")
+    @Query(value = "content_name:?0 AND region_name:?1 AND name:?2*")
     List<VtvTravelSearch> findByContentNameAndRegionNameAndName2(String contentName, String regionName, String name);
 
     @Query(value = "content_name:?0 AND region_name:?1 AND address:?2*")
