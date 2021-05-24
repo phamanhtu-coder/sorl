@@ -45,18 +45,18 @@ public class VtvTravelSearchController {
         return vtvTravelSearchService.findByContentNameAndRegionNameAndAddress2(contentName, regionName, address);
     }
 
-    @GetMapping("findByDataLoc/{contentName}/{latitude}/{longitude}/{distance}")
-    public List<VtvTravelSearch> getByDataLoc(@PathVariable String contentName, @PathVariable String latitude, @PathVariable String longitude, @PathVariable Integer distance) {
+    @GetMapping("findByDataLocRadius/{contentName}/{latitude}/{longitude}/{distance}")
+    public List<VtvTravelSearch> findByDataLocRadius(@PathVariable String contentName, @PathVariable String latitude, @PathVariable String longitude, @PathVariable Integer distance) {
         return vtvTravelSearchService.findByDataLocRadius(contentName, latitude, longitude, distance);
     }
 
-    @GetMapping("findByDataLoc2/{contentName}/{latitude}/{longitude}/{distance}")
-    public List<VtvTravelSearch> getByDataLoc2(@PathVariable String contentName, @PathVariable String latitude, @PathVariable String longitude, @PathVariable Integer distance) {
+    @GetMapping("findByDataLocRadiusExpand/{contentName}/{latitude}/{longitude}/{distance}")
+    public List<VtvTravelSearch> findByDataLocRadiusExpand(@PathVariable String contentName, @PathVariable String latitude, @PathVariable String longitude, @PathVariable Integer distance) {
         return vtvTravelSearchService.findByDataLocRadiusExpand(contentName, latitude, longitude, distance);
     }
 
-    @GetMapping("findByDataLoc3/{contentName}/{startLatitude}/{startLongitude}/{endLatitude}/{endLongitude}")
-    public List<VtvTravelSearch> getByDataLoc3(@PathVariable String contentName, @PathVariable String startLatitude, @PathVariable String startLongitude, @PathVariable String endLatitude, @PathVariable String endLongitude) {
+    @GetMapping("findByDataLocAroundTravelDistance/{contentName}/{startLatitude}/{startLongitude}/{endLatitude}/{endLongitude}")
+    public List<VtvTravelSearch> findByDataLocAroundTravelDistance(@PathVariable String contentName, @PathVariable String startLatitude, @PathVariable String startLongitude, @PathVariable String endLatitude, @PathVariable String endLongitude) {
         return vtvTravelSearchService.findByDataLocAroundTravelDistance(contentName, startLatitude, startLongitude, endLatitude, endLongitude);
     }
 
